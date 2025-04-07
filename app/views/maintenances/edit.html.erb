@@ -1,0 +1,18 @@
+<% content_for :title, "Editing maintenance" %>
+
+<h1>Editing maintenance</h1>
+
+<%= form_with(url: schedulable_maintenance_path(@maintenance), method: :patch) do |form| %>
+
+  <%= render partial: "#{schedulable_maintenances_path(@maintenance)}/form", locals: { schedulable: @maintenance.schedulable } %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<br>
+
+<div>
+  <%= link_to "Show this maintenance", @maintenance %> |
+  <%= link_to "Back to maintenances", maintenances_path %>
+</div>
